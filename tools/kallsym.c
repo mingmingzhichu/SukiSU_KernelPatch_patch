@@ -558,7 +558,7 @@ static int is_symbol_name_pos(kallsym_t *info, char *img, int32_t pos, char *sym
 
 static int find_names(kallsym_t *info, char *img, int32_t imglen)
 {
-    int32_t marker_elem_size = get_markers_elem_size(info);
+    int32_t marker_elem_size = 4;  // 替换原有的 get_markers_elem_size(info)
     // int32_t cand = info->_approx_addresses_or_offsets_offset;
     int32_t cand = 0x4000;
     int32_t test_marker_num = -1;
